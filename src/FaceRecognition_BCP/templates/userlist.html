@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>user list</title>
+    <link rel="stylesheet" href="{ % static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static'css/owl.carousel.min.css'}" type="text/css">
+<!--    <link rel="stylesheet" href="css/aos.css" type="text/css">    -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blueimp-gallery.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    
+<div class="dashboard">
+    <div class="sidenav">
+    <div class="logo">
+        <a href="">
+            <img src="{% static 'img/logo.png'%}" alt="">
+        </a>
+    </div>
+    <!-- <h2 class="heading">
+        dosti
+    </h2> -->
+    <ul class="sidenav__sidenav--list">
+        <li><a href="{% url 'dashboard'%}" class="" method="post">
+            <i class="material-icons">
+            dashboard
+        </i>dashboard</a></li>         
+        <li><a href="{%url 'userregister_View'%}" class="">
+            <i class="material-icons">
+                recent_actors
+            </i>
+            register students
+        </a></li>
+        <li><a href="{%url 'userlist_View'%}" class="active" method="post">
+            {% csrf_token %}
+            <i class="material-icons">
+                group
+                </i>
+            students list</a></li>
+        <li><a href="{%url 'report_View'%}" class="active" methods="post">
+                {% csrf_token %}
+                <i class="material-icons">
+                        picture_as_pdf
+                    </i>
+                generate report</a></li>
+
+         <li><a href="{%url 'dashboard'%}" class="" methods="post">
+             {% csrf_token%}
+            <i class="material-icons">
+                settings_power
+            </i> logout
+        </a></li>
+
+
+    </ul>
+    <div class="copy">
+        &copy; by Dosti Group. 
+    </div>
+</div>
+    <div class="dashboard dashboard--right">
+        <div class="dashboard--right__content">
+            <div class="containr">
+                <h3 class="heading">
+                    users
+                </h3>
+                <div class="dashboard--right__content space">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="userdetail.html">
+                                {% for std in students %}
+                                    <div class="box-group">
+                                        <div class="user-card">
+                                                <div class="user-card__image">
+                                                    <img src="{% static 'img/bg.jpg'%}" alt="">
+                                                </div>
+                                                <div class="user-card__name">
+                                                    {{std.Firstname}}
+                                                </div>
+                                                <div class="user-card__phone">
+                                                    {{std.Semester}}
+                                                </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </a>
+                        </div>
+                    </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+<script src="{% static 'js/owl.carousel.min.js'%}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="{% static 'js/owl-plugin.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/aos.js'%}"></script>
+<script src="{% static 'js/blueimp-gallery.min.js'%}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+</html>

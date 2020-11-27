@@ -1,0 +1,27 @@
+.table {
+  overflow-x: scroll;
+}
+
+.table thead {
+  background: #476cba;
+  color: #fff;
+  font-weight: normal;
+}
+
+.table thead tr th {
+  font-weight: normal;
+}
+
+.table tbody .name {
+  text-transform: capitalize;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex a button {
+  width: unset;
+}

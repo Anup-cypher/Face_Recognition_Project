@@ -1,0 +1,54 @@
+.login {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.login-left {
+  width: 40vw;
+  background: #f8f8f8;
+  padding: 50px 100px;
+}
+
+.login-left .logo {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+
+.login-left .title {
+  margin: 20px 0 5px 0;
+}
+
+.login-left form {
+  margin-top: 50px;
+}
+
+.login-left form .form-control {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #a4a5a4;
+  background: transparent;
+  box-shadow: unset;
+  border-radius: 0;
+  padding: 6px 0;
+}
+
+.login-left form .form-control.has-error input[type="text"], .login-left form .form-control .has-error input[type="email"], .login-left form .form-control .has-error select {
+  border: 1px solid #a94442;
+}
+
+.login-left form .form-control::-webkit-input-placeholder {
+  color: #999;
+  text-transform: lowercase;
+}
+
+.login-left form .forgot {
+  margin: 20px 0 5px 0;
+}
+
+.login-bg {
+  width: 60vw;
+  right: 0;
+}
